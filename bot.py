@@ -1,7 +1,7 @@
 import telebot
 import markups as m
 import parser
-TOKEN = '1974316775:AAHnGEST2F6-ALoP1gGsnDgkG7HxkK_86Vc'
+TOKEN = ''
 task = []
 bot = telebot.TeleBot(TOKEN)
 @bot.message_handler(content_types=['text'])
