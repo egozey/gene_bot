@@ -18,17 +18,20 @@ def pars(gene,search):
 
     text = soup.text
     check = len(text)
-    ch = c[gene][2]-1
-    out = ''
-    text_data = text.split('\n')[c[gene][5]:-17]
     
-    for i in text_data:
-        if check < c[gene][1]:
+    out = ''
+    if check < c[gene][1]:
+        out += 'No results have been found that match your criteria.Please redefine your search criteria.'
+        return out
+    ch = c[gene][2]-1
 
-            return 'No results have been found that match your criteria.Please redefine your search criteria.'
+    text_data = text.split('\n')[c[gene][5]:-17]
+
+    for _ in text_data:
         try:
             out+= text_data[ch-c[gene][7]]+ '  '+ text_data[ch] + '\n'
             ch+=c[gene][6]
         except:
             return out
+
 
