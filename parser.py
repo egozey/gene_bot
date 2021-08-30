@@ -23,6 +23,9 @@ def pars(gene,search):
     if check < c[gene][1]:
         out += 'No results have been found that match your criteria.Please redefine your search criteria.'
         return out
+    if check > 20000:
+        out += 'Слишком много информации конкретизируйте запрос'
+        return out
     ch = c[gene][2]-1
 
     text_data = text.split('\n')[c[gene][5]:-17]
