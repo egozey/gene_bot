@@ -12,7 +12,7 @@ def get_text_messages(message):
         msg = bot.send_message(chat_id ,"Введите мутацию для поиска")
         bot.register_next_step_handler(msg, askSource)
     elif message.text == "/help":
-        bot.send_message(chat_id, "Для поиска мутации на берите (или нажмите) /start", reply_markup=m.start_markup)
+        bot.send_message(chat_id, "Для поиска мутации наберите на клавиатуре (или нажмите кнопку) /start", reply_markup=m.start_markup)
     else:
         bot.send_message(chat_id, "Я тебя не понимаю. Напиши /help.")
 
