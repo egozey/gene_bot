@@ -18,8 +18,12 @@ def get_text_messages(message):
 
 def askSource(message):
     chat_id = message.chat.id
-    task[chat_id].append(message.text)
-    msg =bot.send_message(chat_id ,"Где искать", reply_markup=m.source_markup)
+    if message.text.lower == "c" or message.text.lower == "с" :
+        msg =bot.send_message(chat_id ,"МАЛО ИНФОРМАЦИИ ДЛЯ ПОИСКА", reply_markup=m.start_markup)
+        return pass
+    else:
+        task[chat_id].append(message.text)
+        msg =bot.send_message(chat_id ,"Где искать", reply_markup=m.source_markup)
 
     bot.register_next_step_handler(msg, startPars)
 
