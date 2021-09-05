@@ -24,10 +24,10 @@ def askSource(message):
 
 def startPars(message):
     chat_id = message.chat.id
-    task[chat_id].append(message.text)
-    print(task)
+    task[chat_id].append(message.text)     
+    bot.send_message(chat_id ,parser.pars(task[chat_id][1],task[chat_id][0]))
+    bot.send_message(chat_id ,parser.parsClinvar(task[chat_id][1],task[chat_id][0]), reply_markup=m.start_markup)
 
-    bot.send_message(chat_id ,parser.pars(task[chat_id][1],task[chat_id][0]), reply_markup=m.start_markup)
     del(task[chat_id])
 
 
